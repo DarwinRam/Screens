@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Supervisor Dashboard - Visa Application System</title>
+  <link rel="stylesheet" href="" />
+  <style>
+    .dashboard-supervisor {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 0;
+      justify-content: center;
+    }
+
+    .btns {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    #output-area {
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-family: sans-serif;
+    }
+
+    input, select {
+      padding: 8px;
+      font-size: 14px;
+      margin: 8px 0;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .form-container {
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="supervisor-body">
+  <div class="sup-container">
+    <h1 class="h1S">Supervisor Dashboard</h1>
+
+    <div class="dashboard-supervisor">
+      <button class="btns" onclick="showContent('edit')">Edit Clerk</button>
+      <button class="btns" onclick="showContent('add')">Add Clerk</button>
+      <button class="btns" onclick="showContent('delete')">Delete Clerk</button>
+      <button class="btns" onclick="showContent('system')">Generate System Report</button>
+      <button class="btns" onclick="showContent('clerk')">Generate Clerk Report</button>
+    </div>
+
+    <div id="output-area">
+      Click a button to display its function here.
+    </div>
+  </div>
+
+  <script>
+    function showContent(action) {
+      const output = document.getElementById("output-area");
+  
+      if (action === 'edit') {
+        output.innerHTML = `
+          <h3>Edit Clerk</h3>
+          <div>
+            <input type="text" id="clerkIdInput" placeholder="Enter Clerk ID" />
+            <button onclick="searchClerk()">Search</button>
+          </div>
+          <div id="edit-form-container"></div>
+        `;
+      }
+  
+      if (action === 'add') {
+        output.innerHTML = "<h3>Add Clerk</h3><p>Use this section to add a new clerk to the system.</p>";
+      }
+  
+      if (action === 'delete') {
+        output.innerHTML = `
+          <h3>Delete Clerk</h3>
+          <div>
+            <input type="text" id="deleteClerkIdInput" placeholder="Enter Clerk ID" />
+            <button onclick="searchDeleteClerk()">Search</button>
+          </div>
+          <div id="delete-info-container"></div>
+        `;
+      }
+  
+      if (action === 'system') {
+        output.innerHTML = "<h3>System Report</h3><p>Generating a comprehensive system report...</p>";
+      }
+  
+      if (action === 'clerk') {
+        output.innerHTML = "<h3>Clerk Report</h3><p>Generating a detailed report for all clerks...</p>";
+      }
+    }
+  
+    function searchClerk() {
+      const clerkId = document.getElementById("clerkIdInput").value.trim();
+      const formContainer = document.getElementById("edit-form-container");
+  
+      if (clerkId === "123") {
+        formContainer.innerHTML = `
+          <div class="form-container">
+            <h4>Editing Clerk ID: 123</h4>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" value="Jane Doe" />
+  
+            <label for="email">Email</label>
+            <input type="email" id="email" value="jane.doe@example.com" />
+  
+            <label for="role">Role</label>
+            <select id="role">
+              <option value="clerk" selected>Clerk</option>
+              <option value="supervisor">Supervisor</option>
+            </select>
+  
+            <button onclick="submitEdit()">Save Changes</button>
+          </div>
+        `;
+      } else {
+        formContainer.innerHTML = `<p style="color: red;">Clerk ID "${clerkId}" not found.</p>`;
+      }
+    }
+  
+    function submitEdit() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const role = document.getElementById("role").value;
+  
+      alert(`Changes saved for:\nName: ${name}\nEmail: ${email}\nRole: ${role}`);
+    }
+  
+    function searchDeleteClerk() {
+      const clerkId = document.getElementById("deleteClerkIdInput").value.trim();
+      const deleteContainer = document.getElementById("delete-info-container");
+  
+      if (clerkId === "123") {
+        deleteContainer.innerHTML = `
+          <div class="form-container">
+            <h4>Clerk Found: ID 123</h4>
+            <p><strong>Name:</strong> Jane Doe</p>
+            <p><strong>Email:</strong> jane.doe@example.com</p>
+            <p><strong>Role:</strong> Clerk</p>
+            <button style="background-color: crimson; color: white;" onclick="confirmDelete('${clerkId}')">Delete Clerk</button>
+          </div>
+        `;
+      } else {
+        deleteContainer.innerHTML = `<p style="color: red;">Clerk ID "${clerkId}" not found.</p>`;
+      }
+    }
+  
+    function confirmDelete(clerkId) {
+      const confirmed = confirm(`Are you sure you want to delete Clerk ID ${clerkId}? This action cannot be undone.`);
+      if (confirmed) {
+        alert(`Clerk ID ${clerkId} has been deleted from the system.`);
+        document.getElementById("delete-info-container").innerHTML = "";
+      }
+    }
+  </script>
+  
+</body>
+</html>

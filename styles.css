@@ -1,0 +1,191 @@
+/*visa.html*/
+
+.visa-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('flag.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+}
+.visa-header {
+    background-color: rgba(0, 115, 230, 0.8);
+    color: white;
+    padding: 20px;
+    font-size: 45px;
+    position: relative;
+}
+.admin-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.admin-btn:hover {
+    background-color: #cc0000;
+}
+.visa-container {
+    margin: 50px auto;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 200%;
+}
+.btnV {
+    display: inline-block;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btnV:hover {
+    background-color: #005bb5;
+}
+
+#red{
+    color: red;
+}
+
+/*login.html*/
+
+.login-body {
+    font-family: Arial, sans-serif;
+    background: url('passport.jpg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.h2L {
+    text-align: center;
+}
+
+.logininput-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.logininput-group label {
+    flex: 1;
+}
+
+.logininput-group input {
+    flex: 2;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.role-btn {
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.role-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+}
+
+/*Supervisor.html*/
+.supervisor-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.sup-container {
+    width: 90%;
+    max-width: 600px;
+}
+
+.dashboard-supervisor {
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.dashboard-supervisor:hover {
+    transform: translateY(-5px);
+}
+
+.h1S {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.h2S {
+    text-align: center;
+    color: #555;
+}
+
+.btns {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btns:hover {
+    background: red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
